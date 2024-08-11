@@ -32,7 +32,7 @@ This FastAPI-based API generates images of numbers represented in the Cistercian
 
 2. Open a web browser and navigate to `http://localhost:8000` to see the API documentation and usage instructions.
 
-3. To generate a Cistercian numeral image, make a GET request to `/{number}`, where `{number}` is the integer you want to represent. For example:
+3. To generate a Cistercian numeral image, make a GET request to `/{number}`, where `{number}` is a positive/negative integer you want to represent. For example:
    ```
    http://localhost:8000/42
    ```
@@ -49,6 +49,24 @@ This FastAPI-based API generates images of numbers represented in the Cistercian
 - Numbers must be between -9,999,999,999,999,999 and 9,999,999,999,999,999
 - Rate limited to 30 requests per minute for image generation
 - Rate limited to 5 requests per minute for the documentation page
+
+## Deploy with Docker
+
+This project includes a Dockerfile for easy deployment. Follow these steps to build and run the API using Docker:
+
+1. Build the Docker image:
+   ```
+   docker build -t cistercian-numerals-api .
+   ```
+
+2. Run the container:
+   ```
+   docker run -p 8000:8000 cistercian-numerals-api
+   ```
+
+3. The API will be available at `http://localhost:8000`.
+
+Note: The Dockerfile uses the production-ready Uvicorn server with Gunicorn. If you need to modify the server settings, you can edit the Dockerfile or override the CMD when running the container.
 
 ## Acknowledgements
 
