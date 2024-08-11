@@ -270,11 +270,13 @@ async def root(request: Request):
                 To generate an image, append the desired number to the URL.
                 For example:
             </p>
-            <pre><code>GET /<span>9900</span></code></pre>
-            <p>Limits:</p>
+            <pre><code>GET /<span>999900</span></code></pre>
+            <pre><code>curl /-1234 --output -1234.png</span></code></pre>
+            <p><em>Limits</em>:</p>
             <ul>
                 <li>Only integers are supported.</li>
                 <li>Integers must not exceed ± (10<sup>16</sup> - 1).</li>
+                <li>Negative integers are not historically accurate.</li>
             </ul>
             <p>This API is based on the
             <a
